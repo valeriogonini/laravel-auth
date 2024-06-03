@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<div>
+    <h1>Progetti</h1>
+</div>
 <table class="table">
     <thead>
       <tr>
@@ -19,7 +22,7 @@
             <td>{{$project -> nome_progetto}}</td>
             <td>{{$project -> descrizione_progetto}}</td>
             <td><a href="">{{$project -> link_github_progetto}}</a></td>
-            <td><a href="">Modifica</a></td>
+            <td><a href="{{route('admin.projects.edit',$project)}}">Modifica</a></td>
             <td><a href="">Cancella</a></td>
           </tr>
         @endforeach
