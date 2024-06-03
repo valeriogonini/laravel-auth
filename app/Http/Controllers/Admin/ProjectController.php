@@ -36,7 +36,7 @@ class ProjectController extends Controller
 
         $new_project = Project::create($form_data);
 
-        return to_route('admin.projects.welcome', $new_project);
+        return to_route('admin.projects.index', $new_project);
     }
 
     /**
