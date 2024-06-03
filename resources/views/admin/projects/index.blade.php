@@ -21,7 +21,7 @@
             <th scope="row">{{$project -> id}}</th>
             <td>{{$project -> nome_progetto}}</td>
             <td>{{$project -> descrizione_progetto}}</td>
-            <td><a href="">{{$project -> link_github_progetto}}</a></td>
+            <td><a href="{{$project -> link_github_progetto}}" target="_blank">Link</a></td>
             <td><a href="{{route('admin.projects.edit',$project)}}">Modifica</a></td>
             <td><a href="">Cancella</a></td>
           </tr>
