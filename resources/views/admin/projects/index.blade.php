@@ -23,7 +23,11 @@
             <td>{{$project -> descrizione_progetto}}</td>
             <td><a href="{{$project -> link_github_progetto}}" target="_blank">Link</a></td>
             <td><a href="{{route('admin.projects.edit',$project)}}">Modifica</a></td>
-            <td><a href="">Cancella</a></td>
+            <td> <form action="{{route('admin.projects.destroy', $project)}}" method="POST">
+              @method('DELETE')
+              @csrf
+              <button><i class="fa-solid fa-trash-can"></i></button>
+            </form></td>
           </tr>
         @endforeach
       
