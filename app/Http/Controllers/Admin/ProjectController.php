@@ -32,6 +32,12 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nome_progetto' => 'required|min:3',
+            'descrizione_progetto' => 'required|min:3',
+            'link_github_progetto' => 'required'
+        ]);
+
         $form_data = $request->all();
 
         $new_project = Project::create($form_data);
@@ -60,6 +66,12 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        $request->validate([
+            'nome_progetto' => 'required|min:3',
+            'descrizione_progetto' => 'required|min:3',
+            'link_github_progetto' => 'required'
+        ]);
+
         $form_data = $request->all();
 
         $project->fill($form_data);

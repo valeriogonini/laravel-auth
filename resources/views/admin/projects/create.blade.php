@@ -6,6 +6,17 @@
   <div class="row">
     <div>
       <h1>Inserisci nuovo progetto</h1>
+      <div class="container">
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+        @endif
+      </div>
   </div class="p-3">
   <form action="{{route('admin.projects.store')}}" method="POST">
       @csrf
